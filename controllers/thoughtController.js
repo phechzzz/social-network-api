@@ -70,7 +70,7 @@ const thoughtController = {
   
     // Delete a thought
     deleteThought(req, res) {
-      Thought.findOneAndRemove({ _id: req.params.thoughtId })
+      Thought.findOneAndDelete({ _id: req.params.thoughtId })
         .then((dbThoughtData) => {
           if (!dbThoughtData) {
             return res.status(404).json({ message: 'Thought with this ID does not exist.' });
